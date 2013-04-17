@@ -48,6 +48,10 @@ class CopyDataVisitor extends SimpleFileVisitor<Path> {
         Path rel = project.dataSource.relativize(dir)
         if (rel.nameCount > 3) {
             rel = rel.subpath(3, rel.nameCount);
+            if (rel.fileName.toString() == "fastdebug") {
+                // Do not copy fastdebug versions
+                return FileVisitResult.SKIP_SUBTREE;
+            }
             def targetPath = project.processedData.resolve(rel);
             if(!Files.exists(targetPath)){
                 Files.createDirectory(targetPath);

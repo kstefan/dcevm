@@ -9,6 +9,10 @@ import java.nio.file.attribute.BasicFileAttributes
 apply plugin: 'java'
 apply plugin: 'idea'
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.5'
+}
+
 jar {
     manifest {
         attributes("Main-Class": "org.dcevm.installer.Main")
@@ -17,7 +21,8 @@ jar {
 
 project.ext {
     processedData = Paths.get("$buildDir/data")
-    dataSource = Paths.get("data") // Should be populated by build server
+    // Should be populated by build server from the DCEVM upstream job
+    dataSource = Paths.get("$buildDir/rawdata")
 }
 
 sourceSets {

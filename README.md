@@ -12,6 +12,11 @@ HotSpot tag is the name of the tag in the corresponding HotSpot Mercurial reposi
 
 ## Building
 
+### Compiling shortcut
+* `gradlew patch --info > out.txt 2>&1`
+* `gradlew compileFastdebug --info > out.txt 2>&1`
+* `gradlew compileProduct --info > out.txt 2>&1`
+
 ### General Requirements
 
 You need the following software to build DCEVM:
@@ -21,12 +26,11 @@ You need the following software to build DCEVM:
 * Mercurial
 
 ### Compiling DCEVM
-
 * Configure version you want in [gradle.properties](gradle.properties).
 * Run `./gradlew patch` to retrieve HotSpot sources and patch them.
 * Run `./gradlew compileFastdebug` to build `fastdebug` version or `./gradlew compileProduct` to build `product` version.
 * Compiled libraries are placed in `hotspot/build/fastdebug` or `hotspot/build/product`.
-*
+* 
 ### Installing DCEVM
 
 * Replace `libjvm.so/jvm.dll/libjvm.dylib` in the target JRE.

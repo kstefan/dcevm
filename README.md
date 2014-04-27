@@ -1,4 +1,4 @@
-# DCEVM
+# DCEVM - Modified for my environment (win8 64bit)
 
 This project is a fork of original [DCEVM](http://ssw.jku.at/dcevm/) project.
 
@@ -26,7 +26,7 @@ You need the following software to build DCEVM:
 * Run `./gradlew patch` to retrieve HotSpot sources and patch them.
 * Run `./gradlew compileFastdebug` to build `fastdebug` version or `./gradlew compileProduct` to build `product` version.
 * Compiled libraries are placed in `hotspot/build/fastdebug` or `hotspot/build/product`.
-* 
+*
 ### Installing DCEVM
 
 * Replace `libjvm.so/jvm.dll/libjvm.dylib` in the target JRE.
@@ -46,7 +46,7 @@ Or you can install DCEVM using the gradle script:
 * Tests reports will be in `dcevm/build/reports/tests/index.html`
 
 To run tests from IDE, you need:
- 
+
  * Run `./gradlew agent:build` to build redefinition agent code.
  * Add JVM argument to use redefinition agent (`-javaagent:agent/build/libs/agent.jar`).
  * Add JVM argument to DCEVM VM if installed side-by-side (`-XXaltjvm=dcevm`).

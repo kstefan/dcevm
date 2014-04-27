@@ -1,4 +1,4 @@
-# DCEVM - Modified for my environment (win8 64bit)
+# DCEVM - Modified for my environment
 
 This project is a fork of original [DCEVM](http://ssw.jku.at/dcevm/) project.
 
